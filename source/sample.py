@@ -1,6 +1,7 @@
 #!/bin/python
 import csv
 import numpy as np
+import matplotlib.pyplot as plt
 
 with open("./dataset/pokemon_status.csv", encoding='utf-8') as csv_file:
     csv_data =[(row["図鑑番号"], row["ポケモン名"], row["タイプ１"], row["タイプ２"], row["合計"]) 
@@ -21,4 +22,11 @@ print(unique_type)
 type_count = {}
 for type_name in unique_type:
     type_count[type_name] = type1.count(type_name) + type2.count(type_name)
+
 print(type_count)
+
+plt_data = sorted(type_count.items())
+x, y = zip(*plt_data)
+print(x,y)
+plt.bar(x,y)
+plt.show()
