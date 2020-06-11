@@ -7,10 +7,10 @@ with open("./dataset/pokemon_status.csv", encoding='utf-8') as csv_file:
         for row in csv.DictReader(csv_file) if not "-" in row["図鑑番号"] and row["合計"].isdigit()]
 
 max_total_index = np.argmax([col[4] for col in csv_data])
-print("最大:{}",csv_data[max_total_index][1])
+print("最大:{}".format(csv_data[max_total_index][1]))
 
 min_total_index = np.argmin([col[4] for col in csv_data])
-print("最小:{}",csv_data[min_total_index][1])
+print("最小:{}".format(csv_data[min_total_index][1]))
 
 # get unique type
 type1 = [col[2] for col in csv_data]
