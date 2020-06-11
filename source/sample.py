@@ -21,5 +21,4 @@ print(unique_type)
 type_count = {}
 for type_name in unique_type:
     type_count[type_name] = type1.count(type_name) + type2.count(type_name)
-
 print(type_count)
