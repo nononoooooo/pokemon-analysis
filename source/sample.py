@@ -13,5 +13,13 @@ min_total_index = np.argmin([col[4] for col in csv_data])
 print("最小:{}",csv_data[min_total_index][1])
 
 # get unique type
-type_ = set(set([col[2] for col in csv_data]) & set([col[3] for col in csv_data]))
-print(type_)
+type1 = [col[2] for col in csv_data]
+type2 = [col[3] for col in csv_data]
+unique_type = set(set(type1) & set(type2))
+print(unique_type)
+
+type_count = {}
+for type_name in unique_type:
+    type_count[type_name] = type1.count(type_name) + type2.count(type_name)
+
+print(type_count)
